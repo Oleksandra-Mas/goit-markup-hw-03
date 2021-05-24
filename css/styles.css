@@ -7,11 +7,15 @@
   --light-address-color: rgba(255, 255, 255, 0.6);
   --dark-accent-color: #2f303a;
   --grey-color: #f5f4fa;
+  --border-color: #ececec;
+  --project-card-border-color: #eeeeee;
 
   --header-text-margin-index: 10px;
   --card-padding-index: 30px;
   --header-text-margin-portfolio: 4px;
   --card-padding-portfolio: 20px;
+
+  --button-radius: 4px;
 }
 html {
   box-sizing: border-box;
@@ -57,7 +61,29 @@ p {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 1px solid #666;
+  /* outline: 1px solid #666; */
+}
+.header-container {
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+}
+.header-container {
+  display: flex;
+}
+.site-nav {
+  display: flex;
+}
+.site-nav-list {
+  display: flex;
+}
+
+.contact-nav {
+  display: flex;
+  margin-left: auto;
+}
+
+.contact-nav-item + .contact-nav-item {
+  margin-left: 50px;
 }
 
 /*лого*/
@@ -68,6 +94,11 @@ p {
   line-height: 1.15;
   color: var(--accent-color);
   text-decoration: none;
+
+  display: block;
+  padding-bottom: 25px;
+  padding-top: 24px;
+  margin-right: 93px;
 }
 .studio-logo-part {
   color: var(--logo-primary-color);
@@ -80,6 +111,13 @@ p {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--title-text-color);
+
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.site-nav-list-item:not(:last-child) {
+  margin-right: 50px;
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -109,7 +147,7 @@ p {
   color: var(--accent-color);
   text-decoration: none;
 
-  display: inline-block;
+  display: block;
   margin-bottom: 20px;
 }
 .light-studio-logo-part {
@@ -137,7 +175,7 @@ p {
   color: var(--main-white-color);
   font-style: normal;
 
-  display: inline-block;
+  display: block;
   margin-bottom: 9px;
 }
 .footer {
@@ -160,13 +198,11 @@ p {
 
   margin-bottom: 30px;
 }
-.hero {
-  background-color: var(--dark-accent-color);
-  text-align: center;
-}
 .hero-container {
   padding-top: 200px;
   padding-bottom: 200px;
+  background-color: var(--dark-accent-color);
+  text-align: center;
 }
 
 .btn-order-service {
@@ -178,6 +214,14 @@ p {
   background-color: var(--accent-color);
   color: var(--main-white-color);
   cursor: pointer;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: var(--button-radius);
+  border-color: transparent;
+  text-align: center;
 }
 
 /*секции*/
@@ -199,12 +243,25 @@ p {
 .advantages-title {
   display: none;
 }
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.advantages-list-item {
+  width: calc((100% - 90px) / 4);
+}
+.advantages-list-item:not(:nth-child(4n)) {
+  margin-right: 30px;
+}
+
 /*Чем мы занимаемся*/
 .section-title {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
   color: var(--title-text-color);
+
+  margin-bottom: 50px;
 }
 .team-member-name {
   font-weight: 500;
@@ -226,11 +283,35 @@ p {
 .team-member-card-content {
   padding-top: var(--card-padding-index);
   padding-bottom: var(--card-padding-index);
+  text-align: center;
+}
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.team-list-item {
+  width: calc((100% - 90px) / 4);
+  background-color: var(--main-white-color);
+}
+.team-list-item:not(:nth-child(4n)) {
+  margin-right: 30px;
 }
 
 .works-section {
   padding-top: 0;
 }
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.works-list-item {
+  width: calc((100% - 60px) / 3);
+}
+.works-list-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
 /*портфолио*/
 /*фильтф*/
 .btn-filter {
@@ -241,6 +322,14 @@ p {
   color: var(--title-text-color);
   background-color: var(--grey-color);
   cursor: pointer;
+
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 22px;
+  padding-right: 22px;
+  border-radius: var(--button-radius);
+  border-color: transparent;
+  text-align: center;
 }
 .btn-filter:hover,
 .btn-filter:focus {
@@ -262,8 +351,31 @@ p {
 }
 .project-card-content {
   padding-top: var(--card-padding-portfolio);
-  padding-bottom: (var(--card-padding-portfolio));
+  padding-bottom: var(--card-padding-portfolio);
+  border-bottom: 1px solid var(--project-card-border-color);
+  padding-right: 24px;
+  padding-left: 24px;
 }
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.projects-list-item {
+  width: calc((100% - 60px) / 3);
+}
+.projects-list-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+.projects-list-item:nth-child(-n + 6) {
+  margin-bottom: 30px;
+}
+
 .filter-list {
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+.filter-list-item + .filter-list-item {
+  margin-left: 8px;
 }
