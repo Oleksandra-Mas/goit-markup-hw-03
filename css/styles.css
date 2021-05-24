@@ -14,6 +14,8 @@
   --card-padding-index: 30px;
   --header-text-margin-portfolio: 4px;
   --card-padding-portfolio: 20px;
+  --card-margin: 30px;
+  --button-padding: 32px;
 
   --button-radius: 4px;
 }
@@ -67,16 +69,11 @@ p {
   border-bottom: 1px solid var(--border-color);
   align-items: center;
 }
-.header-container {
-  display: flex;
-}
-.site-nav {
-  display: flex;
-}
+.header-container,
+.site-nav,
 .site-nav-list {
   display: flex;
 }
-
 .contact-nav {
   display: flex;
   margin-left: auto;
@@ -113,8 +110,8 @@ p {
   color: var(--title-text-color);
 
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: var(--button-padding);
+  padding-bottom: var(--button-padding);
 }
 .site-nav-list-item:not(:last-child) {
   margin-right: 50px;
@@ -217,15 +214,21 @@ p {
 
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: var(--button-padding);
+  padding-right: var(--button-padding);
   border-radius: var(--button-radius);
   border-color: transparent;
   text-align: center;
 }
 
 /*секции*/
-
+/*списки/карточки елементов*/
+.team-list,
+.works-list,
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+}
 /*преимущества*/
 .advantage-header {
   line-height: 1.14;
@@ -246,14 +249,22 @@ p {
 .advantages-list {
   display: flex;
   flex-wrap: wrap;
+  margin-left: calc(-1 * var(--card-margin));
+  margin-top: calc(-1 * var(--card-margin));
 }
 .advantages-list-item {
-  width: calc((100% - 90px) / 4);
+  flex-basis: calc((100% - 4 * var(--card-margin)) / 4);
+  margin-left: var(--card-margin);
+  margin-top: var(--card-margin);
 }
-.advantages-list-item:not(:nth-child(4n)) {
-  margin-right: 30px;
+/*.advantages-list-item {
+  width: calc((100% - 3 * var(--card-margin)) / 4);
 }
 
+.advantages-list-item:not(:nth-child(4n)) {
+  margin-right: var(--card-margin);
+}
+*/
 /*Чем мы занимаемся*/
 .section-title {
   font-size: 36px;
@@ -285,32 +296,44 @@ p {
   padding-bottom: var(--card-padding-index);
   text-align: center;
 }
-
-.team-list {
-  display: flex;
-  flex-wrap: wrap;
-}
 .team-list-item {
-  width: calc((100% - 90px) / 4);
+  flex-basis: calc((100% - 4 * var(--card-margin)) / 4);
+  margin-left: var(--card-margin);
+  margin-top: var(--card-margin);
+  background-color: var(--main-white-color);
+}
+.team-list {
+  margin-left: calc(-1 * var(--card-margin));
+  margin-top: calc(-1 * var(--card-margin));
+}
+/*
+.team-list-item {
+  width: calc((100% - 3 * var(--card-margin)) / 4);
   background-color: var(--main-white-color);
 }
 .team-list-item:not(:nth-child(4n)) {
-  margin-right: 30px;
-}
+  margin-right: var(--card-margin);
+}*/
 
 .works-section {
   padding-top: 0;
 }
-.works-list {
-  display: flex;
-  flex-wrap: wrap;
-}
 .works-list-item {
-  width: calc((100% - 60px) / 3);
+  flex-basis: calc((100% - 3 * var(--card-margin)) / 3);
+  margin-left: var(--card-margin);
+  margin-top: var(--card-margin);
+}
+.works-list {
+  margin-left: calc(-1 * var(--card-margin));
+  margin-top: calc(-1 * var(--card-margin));
+}
+/*
+.works-list-item {
+  width: calc((100% - 2 * (var(--card-margin))) / 3);
 }
 .works-list-item:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
+  margin-right: var(--card-margin);
+}*/
 
 /*портфолио*/
 /*фильтф*/
@@ -356,20 +379,22 @@ p {
   padding-right: 24px;
   padding-left: 24px;
 }
-
-.projects-list {
-  display: flex;
-  flex-wrap: wrap;
-}
 .projects-list-item {
-  width: calc((100% - 60px) / 3);
+  flex-basis: calc((100% - 3 * var(--card-margin)) / 3);
+  margin-left: var(--card-margin);
+  margin-top: var(--card-margin);
 }
-.projects-list-item:not(:nth-child(3n)) {
-  margin-right: 30px;
+.projects-list {
+  margin-left: calc(-1 * var(--card-margin));
+  margin-top: calc(-1 * var(--card-margin));
+}
+
+/*.projects-list-item:not(:nth-child(3n)) {
+  margin-right: var(--card-margin);
 }
 .projects-list-item:nth-child(-n + 6) {
-  margin-bottom: 30px;
-}
+  margin-bottom: var(--card-margin);
+}*/
 
 .filter-list {
   margin-bottom: 50px;
