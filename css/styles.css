@@ -63,11 +63,14 @@ p {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
+
   /* outline: 1px solid #666; */
 }
 .header-container {
-  border-bottom: 1px solid var(--border-color);
   align-items: center;
+}
+.header {
+  border-bottom: 1px solid var(--border-color);
 }
 .header-container,
 .site-nav,
@@ -177,11 +180,8 @@ p {
 }
 .footer {
   background-color: var(--dark-accent-color);
-}
-.footer-container {
   padding-top: 60px;
   padding-bottom: 60px;
-  padding-left: 215px;
   text-align: start;
 }
 /*Герой */
@@ -375,7 +375,8 @@ p {
 .project-card-content {
   padding-top: var(--card-padding-portfolio);
   padding-bottom: var(--card-padding-portfolio);
-  border-bottom: 1px solid var(--project-card-border-color);
+  border: 1px solid var(--project-card-border-color);
+  border-top: none;
   padding-right: 24px;
   padding-left: 24px;
 }
